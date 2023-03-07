@@ -12,4 +12,4 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v2
       - name: Run deck deck-sync
-        uses: deck sync --kong-addr http://localhost:8002
+        run: deck sync --kong-addr http://localhost:8002
