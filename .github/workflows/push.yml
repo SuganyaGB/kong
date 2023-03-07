@@ -1,3 +1,4 @@
+---
 name: Run decK
 on: push
 jobs:
@@ -7,7 +8,7 @@ jobs:
       - name: Setup deck
         uses: kong/setup-deck@v1
         with:
-          deck-version: "1.8.0"
+          deck-version: 1.8.0
       - name: Clone repo
         uses: actions/checkout@v2
       - name: Run deck deck-sync
