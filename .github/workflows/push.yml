@@ -2,7 +2,20 @@
 name: Run decK
 on: push
 jobs:
-  deck sync:
+  diff-deck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deck
+        uses: kong/setup-deck@v1
+        with:
+          deck-version: 1.8.0
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Run deck deck-sync
+        run: deck diff --kong-addr http://localhost:8002
+  deck-sync:
+    needs: diff-deck
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - name: Setup deck
@@ -13,3 +26,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Run deck deck-sync
         run: deck sync --kong-addr http://localhost:8002
+
