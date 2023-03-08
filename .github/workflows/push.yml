@@ -11,4 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Deck
-        run: deck sync --kong-addr http://127.0.0.1:8001
+        run: deck sync --kong-addr http://0.0.0.0:8001
