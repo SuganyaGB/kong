@@ -11,4 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Deck
-        run: deck ping --kong-addr https://outbound-adminapi-ny.metteldev.net:8444
+        run: deck ping --kong-addr http://outbound-adminapi-ny.metteldev.net:8444
